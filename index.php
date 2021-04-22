@@ -1,6 +1,6 @@
 <?php
 
-use RegexRouter;
+use RegexRouter\Route;
 
 include 'Route.php';
 
