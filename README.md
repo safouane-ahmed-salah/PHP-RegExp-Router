@@ -14,7 +14,7 @@ then use based on the method to process the request
 ```php
 $route->get('/(\d+)', function($route, $param1){ return 'get '.$param1; }); //make sure you add bracket between the parameter you want to get as argument
 
-//when works on the routes like /basePath/12  
+//works on the routes like /basePath/12  
 ```
 
 it supports the child route inside the function 
