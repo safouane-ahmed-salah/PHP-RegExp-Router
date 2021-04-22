@@ -1,4 +1,4 @@
-# PHP-Regex-Router
+# PHP-RegExp-Router
 
 simple way to create Routes via Regex
 
