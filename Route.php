@@ -13,19 +13,20 @@ class Route{
         $this->route = $basePath;
     }
     
-    function run($path,$fn, $method = 'get'){
+    function run($path,$fn = '', $method = 'get'){
         $t = clone $this;
-        $t->route .= $path;
+        if(is_callable($path)) $fn = $path; 
+        else $t->route .= $path;
         if(!preg_match('#^'.$t->route.'#', $this->request_uri, $m) 
-            || strtolower($method)!=strtolower($this->method) ) return $this;
+            || strtolower($method)!=strtolower($this->method) ) return $t;
         $m[0] = $t;
         echo call_user_func_array($fn,$m);
         die;
     }
 
-    function get($path, $fn){ return $this->run($path,$fn,'get'); }
+    function get($path, $fn = ''){ return $this->run($path,$fn,'get'); }
 
-    function post($path, $fn){ return $this->run($path,$fn,'post'); }
+    function post($path, $fn = ''){ return $this->run($path,$fn,'post'); }
 
-    function delete($path, $fn){ return $this->run($path,$fn, 'delete'); }
+    function delete($path, $fn = ''){ return $this->run($path,$fn, 'delete'); }
 }
