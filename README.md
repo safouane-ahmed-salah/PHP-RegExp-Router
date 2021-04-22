@@ -7,7 +7,7 @@ simple way to create Routes via Regex
 Instantiate with base route;
 
 ```php
-$route = RegexRouter\Route('\baseRoute');
+$route = RegexRouter\Route('/baseRoute');
 ```
 then use based on the method to process the request
 
