@@ -1,5 +1,7 @@
 <?php
 
+namespace RegexRouter;
+
 class Route{
     private $route = '';
     private $request_uri = '';
