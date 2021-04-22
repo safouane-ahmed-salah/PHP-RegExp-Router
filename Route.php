@@ -1,6 +1,6 @@
 <?php
 
-namespace RegexRouter;
+namespace RegexpRouter;
 
 class Route{
     private $route = '';
