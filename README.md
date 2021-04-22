@@ -28,3 +28,10 @@ $route->get('/(\d+)', function($route, $param1){
 }); 
 ```
 
+another way we can chain methods  
+
+```php
+$route->get('/(\d+)', function($route, $param1){
+  return json_encode($data); 
+})->post(function($route, $param1){ /**/ }); //note we can just pass the function to process the request of route like /baseRoute/12  
+```
